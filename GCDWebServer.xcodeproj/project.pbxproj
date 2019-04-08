@@ -178,6 +178,12 @@
 		E2DDD22D1BE6A0EF002CE867 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DDD22C1BE6A0EF002CE867 /* libz.tbd */; };
 		E2DDD22E1BE6A106002CE867 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DDD22A1BE6A0EB002CE867 /* libxml2.tbd */; };
 		E2DDD22F1BE6A108002CE867 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DDD22C1BE6A0EF002CE867 /* libz.tbd */; };
+		E94F00BC225B056200D48C9A /* GCDWebServerFileStreamResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = E94F00BA225B056200D48C9A /* GCDWebServerFileStreamResponse.h */; };
+		E94F00BD225B056200D48C9A /* GCDWebServerFileStreamResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = E94F00BA225B056200D48C9A /* GCDWebServerFileStreamResponse.h */; };
+		E94F00BE225B056200D48C9A /* GCDWebServerFileStreamResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = E94F00BA225B056200D48C9A /* GCDWebServerFileStreamResponse.h */; };
+		E94F00BF225B056200D48C9A /* GCDWebServerFileStreamResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E94F00BB225B056200D48C9A /* GCDWebServerFileStreamResponse.m */; };
+		E94F00C0225B056200D48C9A /* GCDWebServerFileStreamResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E94F00BB225B056200D48C9A /* GCDWebServerFileStreamResponse.m */; };
+		E94F00C1225B056200D48C9A /* GCDWebServerFileStreamResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E94F00BB225B056200D48C9A /* GCDWebServerFileStreamResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -354,6 +360,8 @@
 		E2DDD2261BE6A0B4002CE867 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 		E2DDD22A1BE6A0EB002CE867 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		E2DDD22C1BE6A0EF002CE867 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E94F00BA225B056200D48C9A /* GCDWebServerFileStreamResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDWebServerFileStreamResponse.h; sourceTree = "<group>"; };
+		E94F00BB225B056200D48C9A /* GCDWebServerFileStreamResponse.m */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = GCDWebServerFileStreamResponse.m; sourceTree = "<group>"; tabWidth = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -566,6 +574,8 @@
 				E28BAE3118F99C810095C089 /* GCDWebServerFileResponse.m */,
 				E28BAE3218F99C810095C089 /* GCDWebServerStreamedResponse.h */,
 				E28BAE3318F99C810095C089 /* GCDWebServerStreamedResponse.m */,
+				E94F00BA225B056200D48C9A /* GCDWebServerFileStreamResponse.h */,
+				E94F00BB225B056200D48C9A /* GCDWebServerFileStreamResponse.m */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -643,6 +653,7 @@
 				CEE28D391AE0075C00F4023C /* GCDWebServerFileResponse.h in Headers */,
 				CEE28D291AE0072800F4023C /* GCDWebServerMultiPartFormRequest.h in Headers */,
 				CEE28D3D1AE0076700F4023C /* GCDWebServerStreamedResponse.h in Headers */,
+				E94F00BC225B056200D48C9A /* GCDWebServerFileStreamResponse.h in Headers */,
 				CEE28D0D1AE006D700F4023C /* GCDWebServerConnection.h in Headers */,
 				CEE28D211AE0071200F4023C /* GCDWebServerDataRequest.h in Headers */,
 				CEE28D311AE0074200F4023C /* GCDWebServerDataResponse.h in Headers */,
@@ -667,6 +678,7 @@
 				CEE28D161AE006EE00F4023C /* GCDWebServerHTTPStatusCodes.h in Headers */,
 				CEE28D3A1AE0075D00F4023C /* GCDWebServerFileResponse.h in Headers */,
 				CEE28D2A1AE0072800F4023C /* GCDWebServerMultiPartFormRequest.h in Headers */,
+				E94F00BD225B056200D48C9A /* GCDWebServerFileStreamResponse.h in Headers */,
 				CEE28D3E1AE0076800F4023C /* GCDWebServerStreamedResponse.h in Headers */,
 				CEE28D1E1AE0070700F4023C /* GCDWebServerResponse.h in Headers */,
 				CEE28D2E1AE0073400F4023C /* GCDWebServerURLEncodedFormRequest.h in Headers */,
@@ -691,6 +703,7 @@
 				E2DDD1AC1BE6947F002CE867 /* GCDWebServerFileRequest.h in Headers */,
 				E2DDD1AD1BE6947F002CE867 /* GCDWebServerMultiPartFormRequest.h in Headers */,
 				E2DDD1AE1BE6947F002CE867 /* GCDWebServerURLEncodedFormRequest.h in Headers */,
+				E94F00BE225B056200D48C9A /* GCDWebServerFileStreamResponse.h in Headers */,
 				E2DDD1AF1BE6947F002CE867 /* GCDWebServerDataResponse.h in Headers */,
 				E2DDD1B01BE6947F002CE867 /* GCDWebServerErrorResponse.h in Headers */,
 				E2DDD1B11BE6947F002CE867 /* GCDWebServerFileResponse.h in Headers */,
@@ -838,7 +851,7 @@
 		08FB7793FE84155DC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				TargetAttributes = {
 					CEE28CD01AE004D800F4023C = {
 						CreatedOnToolsVersion = 6.3;
@@ -864,15 +877,14 @@
 			};
 			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "GCDWebServer" */;
 			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
 				en,
 				Base,
+				de,
+				fr,
+				ja,
 			);
 			mainGroup = 08FB7794FE84155DC02AAC07 /* LittleCMS */;
 			projectDirPath = "";
@@ -983,6 +995,7 @@
 			files = (
 				CEE28D1B1AE0070300F4023C /* GCDWebServerRequest.m in Sources */,
 				CEE28D2F1AE0073C00F4023C /* GCDWebServerURLEncodedFormRequest.m in Sources */,
+				E94F00BF225B056200D48C9A /* GCDWebServerFileStreamResponse.m in Sources */,
 				CEE28D0F1AE006DE00F4023C /* GCDWebServerConnection.m in Sources */,
 				CEE28D231AE0071A00F4023C /* GCDWebServerDataRequest.m in Sources */,
 				CEE28D2B1AE0073000F4023C /* GCDWebServerMultiPartFormRequest.m in Sources */,
@@ -1005,6 +1018,7 @@
 			files = (
 				CEE28D1C1AE0070400F4023C /* GCDWebServerRequest.m in Sources */,
 				CEE28D301AE0073C00F4023C /* GCDWebServerURLEncodedFormRequest.m in Sources */,
+				E94F00C0225B056200D48C9A /* GCDWebServerFileStreamResponse.m in Sources */,
 				CEE28D101AE006DF00F4023C /* GCDWebServerConnection.m in Sources */,
 				CEE28D241AE0071B00F4023C /* GCDWebServerDataRequest.m in Sources */,
 				CEE28D2C1AE0073000F4023C /* GCDWebServerMultiPartFormRequest.m in Sources */,
@@ -1035,6 +1049,7 @@
 			files = (
 				E2DDD1961BE6945F002CE867 /* GCDWebServer.m in Sources */,
 				E2DDD1971BE6945F002CE867 /* GCDWebServerConnection.m in Sources */,
+				E94F00C1225B056200D48C9A /* GCDWebServerFileStreamResponse.m in Sources */,
 				E2DDD1981BE6945F002CE867 /* GCDWebServerFunctions.m in Sources */,
 				E2DDD1991BE6945F002CE867 /* GCDWebServerRequest.m in Sources */,
 				E2DDD19A1BE6945F002CE867 /* GCDWebServerResponse.m in Sources */,
@@ -1170,11 +1185,37 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_VERSION_STRING = 3.5.2;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = __GCDWEBSERVER_ENABLE_TESTING__;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.pol-online.GCDWebServers";
@@ -1211,10 +1252,35 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_VERSION_STRING = 3.5.2;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = __GCDWEBSERVER_ENABLE_TESTING__;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.pol-online.GCDWebServers";
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1234,6 +1300,7 @@
 				INFOPLIST_FILE = Frameworks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = GCDWebServers;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1250,6 +1317,7 @@
 				INFOPLIST_FILE = Frameworks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = GCDWebServers;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1267,6 +1335,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = Frameworks/module.modulemap;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = GCDWebServers;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1285,6 +1354,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = Frameworks/module.modulemap;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = GCDWebServers;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1345,6 +1415,7 @@
 		E2DDD1901BE69404002CE867 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -1353,6 +1424,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Frameworks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = GCDWebServers;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
@@ -1364,6 +1436,7 @@
 		E2DDD1911BE69404002CE867 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -1372,6 +1445,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Frameworks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = GCDWebServers;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
@@ -1388,6 +1462,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = tvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.pol-online.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = GCDWebServer;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
@@ -1403,6 +1478,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = tvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.pol-online.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = GCDWebServer;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
@@ -1418,6 +1494,7 @@
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.pol-online.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = GCDWebServer;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1432,6 +1509,7 @@
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.pol-online.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = GCDWebServer;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
