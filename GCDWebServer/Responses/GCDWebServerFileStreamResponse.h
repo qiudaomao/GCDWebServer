@@ -57,6 +57,12 @@ typedef void(^closeBlock)(void);
 @property(nonatomic) readBlock onRead;
 @property(nonatomic) closeBlock onClose;
 
++ (nullable instancetype)responseWithOpenBlock:(openBlock)open
+                                  getSizeBlock:(getSizeBlock)getSize
+                                     seekBlock:(seekBlock)seek
+                                     readBlock:(readBlock)read
+                                    closeBlock:(closeBlock)close
+                                     extension:(NSString*)ext;
 - (nullable instancetype)initWithOpenBlock:(openBlock)open
                               getSizeBlock:(getSizeBlock)getSize
                                  seekBlock:(seekBlock)seek

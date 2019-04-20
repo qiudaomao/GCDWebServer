@@ -38,11 +38,26 @@
 @implementation GCDWebServerFileStreamResponse {
     NSUInteger _offset;
     NSUInteger _size;
+    BOOL opened;
 }
 
 @dynamic contentType, lastModifiedDate, eTag;
 @synthesize ext;
 @synthesize desc;
+
++ (nullable instancetype)responseWithOpenBlock:(openBlock)open
+                                  getSizeBlock:(getSizeBlock)getSize
+                                     seekBlock:(seekBlock)seek
+                                     readBlock:(readBlock)read
+                                    closeBlock:(closeBlock)close
+                                     extension:(NSString*)ext {
+    return [[GCDWebServerFileStreamResponse alloc] initWithOpenBlock:open
+                                                        getSizeBlock:getSize
+                                                           seekBlock:seek
+                                                           readBlock:read
+                                                          closeBlock:close
+                                                           extension:ext];
+}
 
 - (nullable instancetype)initWithOpenBlock:(openBlock)open
                               getSizeBlock:(getSizeBlock)getSize
@@ -50,32 +65,37 @@
                                  readBlock:(readBlock)read
                                 closeBlock:(closeBlock)close
                                  extension:(NSString*)ext {
-    id priv = open();
-    if (!priv) return nil;
-    NSInteger size = getSize();
-    if (size<=0) return nil;
     if ((self = [super init])) {
         self.onOpen = open;
         self.onGetSize = getSize;
         self.onSeek = seek;
         self.onRead = read;
         self.onClose = close;
-        self.privData = priv;
     }
     _offset = 0;
+    opened = NO;
+    NSError *err;
+    [self open:&err];
+    if (err) {
+        return nil;
+    }
     return self;
 }
 
 - (BOOL)open:(NSError**)error {
-    id priv = self.onOpen();
-    if (!priv) return NO;
-    self.privData = priv;
+    if (!opened) {
+        opened = YES;
+        id priv = self.onOpen();
+        if (!priv) return NO;
+        self.privData = priv;
+    }
     NSUInteger size = self.onGetSize();
     _size = size;
     self.contentLength = _size;
     if (_size<=0) return NO;
     [self setStatusCode:kGCDWebServerHTTPStatusCode_PartialContent];
-    [self setValue:[NSString stringWithFormat:@"bytes %lu-%lu/%lu", (unsigned long)_offset, (unsigned long)(_offset + _size - 1), (unsigned long)size] forAdditionalHeader:@"Content-Range"];
+    NSString *rangestr = [NSString stringWithFormat:@"bytes %lu-%lu/%lu", (unsigned long)_offset, (unsigned long)(_offset + _size - 1), (unsigned long)size];
+    [self setValue:rangestr forAdditionalHeader:@"Content-Range"];
     self.contentType = GCDWebServerGetMimeTypeForExtension(self.ext, nil);
     if (self.onSeek(0)) {
         self.onClose();
