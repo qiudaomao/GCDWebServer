@@ -62,13 +62,15 @@ typedef void(^closeBlock)(void);
                                      seekBlock:(seekBlock)seek
                                      readBlock:(readBlock)read
                                     closeBlock:(closeBlock)close
-                                     extension:(NSString*)ext;
+                                     extension:(NSString*)ext
+                                         range:(NSRange)byteRange;
 - (nullable instancetype)initWithOpenBlock:(openBlock)open
                               getSizeBlock:(getSizeBlock)getSize
                                  seekBlock:(seekBlock)seek
                                  readBlock:(readBlock)read
                                 closeBlock:(closeBlock)close
-                                 extension:(NSString*)ext;
+                                 extension:(NSString*)ext
+                                     range:(NSRange)byteRange;
 @end
 
 NS_ASSUME_NONNULL_END

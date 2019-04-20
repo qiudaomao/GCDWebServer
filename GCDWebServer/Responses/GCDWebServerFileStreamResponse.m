@@ -38,6 +38,7 @@
 @implementation GCDWebServerFileStreamResponse {
     NSUInteger _offset;
     NSUInteger _size;
+    NSRange range;
     BOOL opened;
 }
 
@@ -50,13 +51,15 @@
                                      seekBlock:(seekBlock)seek
                                      readBlock:(readBlock)read
                                     closeBlock:(closeBlock)close
-                                     extension:(NSString*)ext {
+                                     extension:(NSString*)ext
+                                         range:(NSRange)byteRange {
     return [[GCDWebServerFileStreamResponse alloc] initWithOpenBlock:open
                                                         getSizeBlock:getSize
                                                            seekBlock:seek
                                                            readBlock:read
                                                           closeBlock:close
-                                                           extension:ext];
+                                                           extension:ext
+                                                               range:byteRange];
 }
 
 - (nullable instancetype)initWithOpenBlock:(openBlock)open
@@ -64,16 +67,18 @@
                                  seekBlock:(seekBlock)seek
                                  readBlock:(readBlock)read
                                 closeBlock:(closeBlock)close
-                                 extension:(NSString*)ext {
+                                 extension:ext
+                                     range:(NSRange)byteRange {
     if ((self = [super init])) {
         self.onOpen = open;
         self.onGetSize = getSize;
         self.onSeek = seek;
         self.onRead = read;
         self.onClose = close;
+        self.ext = ext;
     }
-    _offset = 0;
     opened = NO;
+    range = byteRange;
     NSError *err;
     [self open:&err];
     if (err) {
@@ -90,14 +95,35 @@
         self.privData = priv;
     }
     NSUInteger size = self.onGetSize();
-    _size = size;
-    self.contentLength = _size;
-    if (_size<=0) return NO;
+//    NSLog(@"WebServer request Range %lu %lu", range.location, range.length);
+    BOOL hasByteRange = GCDWebServerIsValidByteRange(range);
+    if (hasByteRange) {
+        if (range.location != NSUIntegerMax) {
+            range.location = MIN(range.location, size);
+            range.length = MIN(range.length, size - range.location);
+        } else {
+            range.length = MIN(range.length, size);
+            range.location = _size - range.length;
+        }
+        if (range.length == 0) {
+            return nil;  // TODO: Return 416 status code and "Content-Range: bytes */{file length}" header
+        }
+    } else {
+        range.location = 0;
+        range.length = _size;
+    }
+    
+    _offset = range.location;
+    _size = range.length;
+
+    if (size<=0) return NO;
     [self setStatusCode:kGCDWebServerHTTPStatusCode_PartialContent];
     NSString *rangestr = [NSString stringWithFormat:@"bytes %lu-%lu/%lu", (unsigned long)_offset, (unsigned long)(_offset + _size - 1), (unsigned long)size];
     [self setValue:rangestr forAdditionalHeader:@"Content-Range"];
+//    NSLog(@"WebServer response header range %@", rangestr);
+    self.contentLength = _size;
     self.contentType = GCDWebServerGetMimeTypeForExtension(self.ext, nil);
-    if (self.onSeek(0)) {
+    if (!self.onSeek(_offset)) {
         self.onClose();
         return NO;
     }
@@ -106,7 +132,10 @@
 
 - (NSData*)readData:(NSError**)error {
     size_t length = MIN((NSUInteger)kFileReadBufferSize, _size);
+//    NSLog(@"WebServer try readData %lu", length);
     NSData *data = self.onRead(length);
+    _size -= data.length;
+//    NSLog(@"WebServer real readData %lu => %lu left %lu", length, data.length, _size);
     return data;
 }
 
